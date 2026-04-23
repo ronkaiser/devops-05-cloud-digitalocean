@@ -31,9 +31,8 @@ On DigitalOcean, Linux virtual machines are called **Droplets**.
 - A [DigitalOcean](https://www.digitalocean.com/) account (the course uses signup credits where available).
 - An **SSH client** on your computer (OpenSSH is enough: `ssh`, `ssh-keygen`, `scp`).
 - **Java 17** and **Gradle** on your machine if you build the course example locally. The sample app uses a Java 17 toolchain (see `java` block in `build.gradle`).
-- Optional: read the module handout alongside this README: [05 - Cloud Basics & IaaS Handout.pdf](../02%20-%20Entering%20Learning%20Phase%202%20-%20DevOps%20Fundamentals/05%20-%20Cloud%20%26%20Infrastructure%20as%20Service%20Basics%20with%20DigitalOcean/05%20-%20Cloud%20Basics%20%26%20IaaS%20Handout.pdf).
 
-**Example application (Gradle / Spring Boot):** [java-react-example](../02%20-%20Entering%20Learning%20Phase%202%20-%20DevOps%20Fundamentals/05%20-%20Cloud%20%26%20Infrastructure%20as%20Service%20Basics%20with%20DigitalOcean/java-react-example/)
+**Example application (Gradle / Spring Boot):** [java-react-example](./java-react-example/)
 
 ---
 
@@ -120,16 +119,16 @@ Commands may differ on other distributions; adjust to match your Droplet’s OS.
 
 Goal: **build** a runnable JAR on your machine, **copy** it to the Droplet, and **run** it there—mirroring the handout flow (“in real world, applications will run on a remote server”).
 
-The course example lives in [java-react-example](../02%20-%20Entering%20Learning%20Phase%202%20-%20DevOps%20Fundamentals/05%20-%20Cloud%20%26%20Infrastructure%20as%20Service%20Basics%20with%20DigitalOcean/java-react-example/). After a successful build, the **executable** Spring Boot JAR is typically `build/libs/java-react-example.jar` (alongside a `*-plain.jar` that is not the fat executable—use the one **without** `-plain`).
+The course example lives in [java-react-example](./java-react-example/). After a successful build, the **executable** Spring Boot JAR is typically `build/libs/java-react-example.jar` (alongside a `*-plain.jar` that is not the fat executable—use the one **without** `-plain`).
 
 *You may use `root` or another account for this first pass; the next section documents creating dedicated Linux users as a security best practice for ongoing work.*
 
 ### 1. Build the JAR file
 
-On your **local** machine, from the `java-react-example` directory:
+On your **local** machine, from this repository’s `java-react-example` directory (for example after `cd` into the repo root):
 
 ```bash
-cd "/path/to/java-react-example"
+cd java-react-example
 gradle bootJar
 ```
 
@@ -236,6 +235,5 @@ Run the service as `myapp` (for example with `sudo -u myapp java -jar /opt/myapp
 
 ## References
 
-- Course handout (full slide narrative): [05 - Cloud Basics & IaaS Handout.pdf](../02%20-%20Entering%20Learning%20Phase%202%20-%20DevOps%20Fundamentals/05%20-%20Cloud%20%26%20Infrastructure%20as%20Service%20Basics%20with%20DigitalOcean/05%20-%20Cloud%20Basics%20%26%20IaaS%20Handout.pdf)
 - README structure guidance: [Make a README](https://www.makeareadme.com/)
 - DigitalOcean documentation: [Droplets](https://docs.digitalocean.com/products/droplets/), [How to Connect to Droplets with SSH](https://docs.digitalocean.com/products/droplets/how-to/connect-with-ssh/), [Cloud Firewalls](https://docs.digitalocean.com/networking/firewalls/)
